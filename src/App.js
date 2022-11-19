@@ -2,8 +2,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <main>
+      <div className="box-container">
+        <div className="inner-box">
+        </div>
+      </div>
+    </main>
   );
 }
 

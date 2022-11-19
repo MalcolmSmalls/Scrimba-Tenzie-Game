@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color:#E5E5E5;
+  display:flex;
+  justify-content:center;
+}
+
+.box-container{
+  width:calc(360px * 2);
+  height:calc(379px * 2);
+  background-color:#0B2434;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.inner-box{
+  background-color:#F5F5F5;
+  width:640px;
+  height:640px;
+  border-radius:20px;
+}
