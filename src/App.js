@@ -1,7 +1,22 @@
+import React from 'react';
 import './App.css';
 import Die from "./Components/Die"
 
 function App() {
+
+  function allDice () {
+    let newArr = []
+    for(let i=0;i<10;i++){
+      let num = Math.ceil(Math.random()*6)
+      newArr.push(num)
+    }
+    console.log(newArr)
+  }
+
+  React.useEffect(() => {
+    allDice()
+  }, [])
+
   return (
     <main>
       <div className="box-container">

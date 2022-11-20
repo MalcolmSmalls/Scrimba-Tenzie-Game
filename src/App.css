@@ -46,5 +46,6 @@ body {
   justify-content:center;
   align-items:center;
   font-family: 'Karla', sans-serif;
-  font-size:calc(20.59px * 2)
+  font-size:calc(20.59px * 2);
+  cursor:pointer;
 }
