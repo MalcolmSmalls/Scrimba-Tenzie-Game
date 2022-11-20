@@ -65,5 +65,14 @@ body {
   margin-right:auto; */
 
   margin:calc(45.6px * 2) auto 0px auto;
+  cursor:pointer;
 
+}
+
+.roll-btn:focus {
+  outline:none;
+}
+
+.roll-btn:active{
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }

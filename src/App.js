@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Die from "./Components/Die"
+import { nanoid } from 'nanoid'
 
 function App() {
 
@@ -12,15 +13,19 @@ function App() {
     let newArr = []
     for(let i=0;i<10;i++){
       let num = Math.ceil(Math.random()*6)
-      newArr.push(num)
+      let obj = {value: num, isHeld: false, id: nanoid()}
+      newArr.push(obj)
     }
     return newArr
   }
 
 
+
+
+
   const diceMaker = dice.map(diceElement => {
     return (
-      <Die value={diceElement} />
+      <Die key={diceElement.id} value={diceElement.value} isHeld={diceElement.isHeld}/>
     )
   })
 
