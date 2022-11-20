@@ -24,6 +24,10 @@ function App() {
     )
   })
 
+  function rollDice () {
+    setDice(allNewDice())
+  }
+
 
 
   return (
@@ -31,6 +35,7 @@ function App() {
       <div className="box-container">
         <div className="inner-box">
           {diceMaker}
+          <button onClick={rollDice}>Roll Dice</button>
         </div>
       </div>
     </main>
