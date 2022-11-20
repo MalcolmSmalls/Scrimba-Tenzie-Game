@@ -35,7 +35,7 @@ function App() {
       <div className="box-container">
         <div className="inner-box">
           {diceMaker}
-          <button onClick={rollDice}>Roll Dice</button>
+          <button onClick={rollDice} className="roll-btn">Roll Dice</button>
         </div>
       </div>
     </main>
