@@ -9,7 +9,7 @@ export default function Die (props) {
     }
 
     return (
-        <div className='dice-container' style={styles}>
+        <div className='dice-container' style={styles} onClick={()=>props.holdDice(props.id)}>
             {props.value}
         </div>
     )

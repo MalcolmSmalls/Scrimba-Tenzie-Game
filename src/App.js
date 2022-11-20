@@ -20,12 +20,14 @@ function App() {
   }
 
 
-
+  function holdDice(id){
+    console.log(id)
+  }
 
 
   const diceMaker = dice.map(diceElement => {
     return (
-      <Die key={diceElement.id} value={diceElement.value} isHeld={diceElement.isHeld}/>
+      <Die key={diceElement.id} id = {diceElement.id} value={diceElement.value} isHeld={diceElement.isHeld} holdDice = {holdDice}/>
     )
   })
 
