@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Die from "./Components/Die"
 import { nanoid } from 'nanoid'
+import Confetti from 'react-confetti'
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     })
 
   const [ tenzies, setTenzies ] = React.useState(false)
+
+
 
   React.useEffect(() => {
     const winningVal = dice[0].value 
@@ -83,7 +86,8 @@ function App() {
           <h1 className="title">Tenzies</h1>
           <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           {diceMaker}
-          <button onClick={rollDice} className="roll-btn">Roll Dice</button>
+          {tenzies && <Confetti />}
+          <button onClick={rollDice} className="roll-btn">{tenzies === true ? 'New Game' : 'Roll Dice'}</button>
         </div>
       </div>
     </main>
