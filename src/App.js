@@ -77,6 +77,11 @@ function App() {
     }))
   }
 
+  function newGame() {
+    setDice(allNewDice())
+    setTenzies(false)
+  }
+
 
 
   return (
@@ -87,7 +92,7 @@ function App() {
           <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           {diceMaker}
           {tenzies && <Confetti />}
-          <button onClick={rollDice} className="roll-btn">{tenzies === true ? 'New Game' : 'Roll Dice'}</button>
+          <button onClick={tenzies ? newGame : rollDice} className="roll-btn">{tenzies === true ? 'New Game' : 'Roll Dice'}</button>
         </div>
       </div>
     </main>
