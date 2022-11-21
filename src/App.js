@@ -30,12 +30,17 @@ function App() {
         }
       })
     })
+  
   }
 
 
   const diceMaker = dice.map(diceElement => {
     return (
-      <Die key={diceElement.id} id = {diceElement.id} value={diceElement.value} isHeld={diceElement.isHeld} holdDice = {holdDice}/>
+      <Die key={diceElement.id} 
+           id = {diceElement.id} 
+           value={diceElement.value} 
+           isHeld={diceElement.isHeld} 
+           holdDice = {() => {holdDice(diceElement.id)}}/>
     )
   })
 
@@ -58,3 +63,6 @@ function App() {
 }
 
 export default App;
+
+
+
