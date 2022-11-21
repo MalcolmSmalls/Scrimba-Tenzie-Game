@@ -21,7 +21,15 @@ function App() {
 
 
   function holdDice(id){
-    console.log(id)
+    setDice( prevDice => {
+      return prevDice.map(note => {
+        if(note.id === id){
+          return {...note, isHeld: !note.isHeld}
+        } else {
+          return note
+        }
+      })
+    })
   }
 
 
