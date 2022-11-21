@@ -9,6 +9,23 @@ function App() {
     return allNewDice()
     })
 
+  const [ tenzies, setTenzies ] = React.useState(false)
+
+  React.useEffect(() => {
+    const winningVal = dice[0].value 
+    let count = 0
+    for(let i = 0; i < dice.length; i++) {
+      if(dice[i].value === winningVal && dice[i].isHeld === true){
+        count++
+        if(count === 10){
+          setTenzies(true)
+          return console.log('you won!')
+      }    
+    }
+
+    }
+
+  },[dice])
 
   function createDice() {
     return {value: Math.ceil(Math.random() * 6), isHeld: false, id: nanoid()}
