@@ -9,12 +9,15 @@ function App() {
     return allNewDice()
     })
 
+
+  function createDice() {
+    return {value: Math.ceil(Math.random() * 6), isHeld: false, id: nanoid()}
+  }
+
   function allNewDice () {
     let newArr = []
     for(let i=0;i<10;i++){
-      let num = Math.ceil(Math.random()*6)
-      let obj = {value: num, isHeld: false, id: nanoid()}
-      newArr.push(obj)
+      newArr.push(createDice())
     }
     return newArr
   }
@@ -47,7 +50,7 @@ function App() {
   function rollDice () {
     setDice(prevDice => prevDice.map(die => {
       if(die.isHeld === false){
-        return {value: Math.ceil(Math.random() * 6), isHeld: false, id: nanoid()}
+        return createDice()
       } else {
         return die
       }
@@ -60,6 +63,8 @@ function App() {
     <main>
       <div className="box-container">
         <div className="inner-box">
+          <h1 className="title">Tenzies</h1>
+          <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           {diceMaker}
           <button onClick={rollDice} className="roll-btn">Roll Dice</button>
         </div>
